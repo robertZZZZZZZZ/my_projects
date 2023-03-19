@@ -1,0 +1,9 @@
+{
+	"name": "datafactoryudacityrob",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "9880bcfd-a3bf-4c5a-b120-78678cdb985d",
+		"tenantId": "44eee48f-0fe5-49c1-8259-b6303bccd245"
+	}
+}

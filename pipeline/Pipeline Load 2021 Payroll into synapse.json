@@ -1,0 +1,41 @@
+{
+	"name": "Pipeline Load 2021 Payroll into synapse",
+	"properties": {
+		"activities": [
+			{
+				"name": "Data flow1",
+				"type": "ExecuteDataFlow",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"dataflow": {
+						"referenceName": "load 2021 Payroll Data to synapse",
+						"type": "DataFlowReference"
+					},
+					"staging": {
+						"linkedService": {
+							"referenceName": "ls_datalake",
+							"type": "LinkedServiceReference"
+						},
+						"folderPath": "adlsnycpayroll-robert-puhlfuerst/dirstaging"
+					},
+					"compute": {
+						"coreCount": 8,
+						"computeType": "General"
+					},
+					"traceLevel": "Fine"
+				}
+			}
+		],
+		"annotations": [],
+		"lastPublishTime": "2023-03-19T10:34:48Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}
